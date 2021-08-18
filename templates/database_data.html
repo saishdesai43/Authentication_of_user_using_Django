@@ -1,0 +1,35 @@
+<style>
+    table, th, td {
+       border: 1px solid black;
+       border-collapse: collapse
+    }
+    th{
+        color: black;
+        background-color: sandybrown;
+    }
+    tr{
+        background-color: lightgreen;
+    }
+ </style>
+ <table>
+<tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Actions</th>
+</tr>
+{% for event in event_list %} 
+
+    <tr>
+        <td>{{event.username}}</td>
+        <td>{{event.email}}</td>
+        <td>{{event.address}}</td>
+
+        <td><a href="/delete/{{event.id}}"><span class="btn btn-danger">Delete</span></a></td>
+        
+        </tr>
+        
+
+{%endfor%}
+<a href="/">Back to home page</a>
+</table>
